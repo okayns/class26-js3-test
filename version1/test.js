@@ -42,22 +42,19 @@ function modifyUI(cb) {
   document.body.appendChild(btnElement);
   const imgElement = document.createElement('img');
   document.body.appendChild(imgElement);
-  imgElement.setAttribute(
-    'src',
-    'https://avatars3.githubusercontent.com/u/20858568?s=200&v=4',
-  );
+
   imgElement.style.display = 'block';
   imgElement.style.marginTop = '1rem';
   btnElement.addEventListener('click', () => {
-    cb(imgElement);
+    imgElement.setAttribute(
+      'src',
+      'https://avatars3.githubusercontent.com/u/20858568?s=200&v=4',
+    );
+    btnElement.remove();
   });
 }
 
-function removeImage(img) {
-  img.remove();
-}
-
-modifyUI(removeImage);
+modifyUI();
 
 /*
 3.
